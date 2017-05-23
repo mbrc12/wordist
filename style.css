@@ -1,0 +1,55 @@
+@font-face { font-family:Hearts; src: url('Chasing Hearts - OTF.otf'); }
+
+major { font-family:Hearts; font-size:100; font-weight:300; color:blueviolet;}
+major2 {font-family:Hearts; font-size:100; font-weight:300; color:crimson;}
+minor { font-family:Hearts; font-size:60;  font-weight:200 }
+asis  { font-family:Hearts; font-size:40;  font-weight:100 }
+asis2 { font-family:Hearts; font-size:40; color:red}
+
+@keyframes correct {
+	from { font-size:40; }
+	50%   { font-size:60; }
+	100% {font-size:40; }
+}
+
+highword {
+	font-family:Hearts;
+	font-size:40; font-weight:100;
+	animation-name: correct;
+	animation-duration: 1.5s;
+}
+
+cble {
+	cursor:hand;
+}
+cble:hover {
+	color: red;
+}
+
+cscroll {}
+
+csbut {
+	color:green;
+}
+cscur {
+	color:cadetblue;
+}
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-left: 28px solid violet;
+	border-bottom: 20px solid transparent;
+}
