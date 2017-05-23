@@ -2,6 +2,7 @@ var STDTIME = 1500;
 var FAILLIMIT = 2;
 
 var musicon = false;
+var themusic = new Audio();
 var dict = 0;
 
 function sleep(milliseconds) {
@@ -67,10 +68,11 @@ function about() {
 function toggle() {
 	if (musicon) {
 		musicon = false;
-		$("#musics").html("");
+		themusic.pause();
 	} else {
 		musicon = true;
-		$("#musics").html("<audio src='First Steps.mp3' autoplay loop></audio>");
+		themusic = new Audio("First Steps.mp3");
+		themusic.play();
 	}
 }
 
