@@ -1,7 +1,7 @@
 var STDTIME = 1500;
 var FAILLIMIT = 2;
 
-var musicon = true;
+var musicon = false;
 var dict = 0;
 
 function sleep(milliseconds) {
