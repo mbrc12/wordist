@@ -175,7 +175,7 @@ function hint() {
 				ok = true;
 			}
 		}
-		if (ok) { $("#thestr").html($("#thestr").html() + "<font color='red'>"+ls[x]+"</font>"); break;}
+		if (ok) { getScreen(); $("#thestr").html($("#thestr").html() + "<font color='red'>"+ls[x]+"</font>"); break;}
 	}		
 }
 		
