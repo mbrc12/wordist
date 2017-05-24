@@ -31,7 +31,7 @@ function howtoplay() {
 			<table>\
 			<tr><td><asis2>1.</asis2></td><td><asis>You start with a letter displayed on the screen</asis></td></tr>\
 			<tr><td><asis2>2.</asis2></td><td><asis>At each step you select a letter from the list below (a..z) to add at the end</asis></td></tr>\
-			<tr><td><asis2>3.</asis2></td><td><asis>Your goal is to make a suffix of the new string a valid english word. For example, if you add a 'd' at the end of 'quarad', you get 'quaradd' with 'add' as a suffix.</asis></td></tr>\
+			<tr><td><asis2>3.</asis2></td><td><asis>Your goal is to make a suffix of the new string a valid english word <font color='red'> of more than 2 letters</font>. For example, if you add a 'd' at the end of 'quarad', you get 'quaradd' with 'add' as a suffix.</asis></td></tr>\
 			<tr><td><asis2>4.</asis2></td><td><asis>For each word as a suffix you get 1 point. If your letter addition creates multiple valid suffixes, you score multiple points. For the first word you get 1, for the second 4, for the third 16, and so on.</asis></td></tr>\
 			<tr><td><asis2>5.</asis2></td><td><asis>If you fail to create a valid suffix for 2 consecutive moves, you lose.</asis></td></tr>\
 			<tr><td><asis2>6.</asis2></td><td><asis>You might take a hint, but hints can only help you with single letter additions.</asis></td></tr>\
