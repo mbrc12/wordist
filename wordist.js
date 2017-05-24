@@ -1,5 +1,6 @@
 var STDTIME = 1500;
 var FAILLIMIT = 2;
+var LENGTHLIM = 20;
 
 var musicon = false;
 var themusic = new Audio();
@@ -34,6 +35,7 @@ function howtoplay() {
 			<tr><td><asis2>4.</asis2></td><td><asis>For each word as a suffix you get 1 point. If your letter addition creates multiple valid suffixes, you score multiple points. For the first word you get 1, for the second 4, for the third 16, and so on.</asis></td></tr>\
 			<tr><td><asis2>5.</asis2></td><td><asis>If you fail to create a valid suffix for 2 consecutive moves, you lose.</asis></td></tr>\
 			<tr><td><asis2>6.</asis2></td><td><asis>You might take a hint, but hints can only help you with single letter additions.</asis></td></tr>\
+			<tr><td><asis2>7.</asis2></td><td><asis>Sometimes it might be possible to cycle around with words, but you are encouraged to try new combinations</asis></td></tr>\
 			</table>\
 			To return to main menu (from here and anywhere), click/tap the <font color='blueviolet'>Wordist</font>.\
 			</minor>");	
@@ -108,12 +110,14 @@ function randomchar() {
 var failed = 0;
 var curstr = "";
 var curscore = 0;
+var compressed = false;
 
 
 function newgame() {
 	curscore = 0;
 	failed = 0;
 	curstr = randomchar();
+	compressed = false;
 	$("#score").html(getScore());
 	getScreen();
 }
@@ -152,7 +156,15 @@ function keyed(e) {
 }
 
 function getScreen() {
-	$("#screen").html("<center><minor id='thestr'>"+curstr+"</minor><div id ='charscroll'></div></center>");
+	if (curstr.length > LENGTHLIM) {
+		curstr = curstr.substring(curstr.length-LENGTHLIM,curstr.length);
+		compressed = true;
+	}
+	var cst = curstr;
+	if (compressed) {
+		cst = "..."+cst;
+	}
+	$("#screen").html("<center><minor id='thestr'>"+cst+"</minor><div id ='charscroll'></div></center>");
 	nextScroll();
 }
 
@@ -186,9 +198,9 @@ function nextScroll() {
 		
 	for (var i = 97; i <= 97+25; i++) {
 		var c = String.fromCharCode(i);
-		$("#charscroll").append("<cscur onclick=\"keyed('"+c+"')\"><cble><asis>"+c+"</asis></cble></cscur>&nbsp;&nbsp;");
+		$("#charscroll").append("<cscur onclick=\"keyed('"+c+"')\"><cble><minor>"+c+"</minor></cble></cscur>&nbsp;&nbsp;");
 	}
-	$("#charscroll").append("<cscur onclick='hint()'><asis><cble>(hint)</cble></asis></cscur>");
+	$("#charscroll").append("<cscur onclick='hint()'><minor><cble>(hint)</cble></minor></cscur>");
 	
 	/* curc += 1;
 	 if (curc >= ls.length) curc = 0;
